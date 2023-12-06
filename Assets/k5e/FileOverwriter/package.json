@@ -1,0 +1,21 @@
+﻿{
+  "name": "com.rirfee.fileoverwriter",
+  "version": "1.0.0",
+  "displayName": "File Overwriter",
+  "description": "An extension enabling overwriting of files in Unity.",
+  "author": {
+    "name": "kokonoe",
+    "url": "https://rirfee.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nonuplet/fileoverwriter"
+  },
+  "keywords": [
+    "unity",
+    "file",
+    "editor",
+    "overwrite"
+  ],
+  "license": "MIT"
+}
