@@ -1,0 +1,31 @@
+name: Create Package
+
+on:
+  push:
+    branches: 
+      - main
+    tags:
+      - v*
+
+jobs:
+  create-package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          
+      - name: Get tag
+        id: tag
+        run: echo ::set-output name=name::${GITHUB_REF#refs/tags/v}
+
+      - name: Create package branch
+        uses: hekomi/create-upm-branch-action@main
+        with:
+          git-tag: ${{ steps.tag.outputs.name }}
+          pkg-root-dir-path: Assets/k5e/FileOverwriter
+          upm-branch: pkg
+          root-files: "README.md CHANGELOG.md"
+    
+  
